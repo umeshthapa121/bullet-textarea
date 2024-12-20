@@ -1,6 +1,6 @@
 {
   "name": "bullet-textarea",
-  "version": "1.0.3",
+  "version": "1.0.7",
   "description": "The Bullet Textarea is a user interface component designed to streamline the process of creating and organizing bullet-point lists. Each line in the textarea is automatically formatted as a bullet point.",
   "main": "src/index.js",
   "scripts": {
