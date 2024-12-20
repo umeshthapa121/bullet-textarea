@@ -1,10 +1,5 @@
 // index.js
 
-/**
- * Bullet Textarea Component
- * A simple utility for creating and managing bullet-pointed text inputs.
- */
-
 class BulletTextarea {
     constructor(selector) {
       this.textarea = document.querySelector(selector);
@@ -36,10 +31,6 @@ class BulletTextarea {
       this.previousLength = newLength;
     }
   }
-  
-  // Example Usage
-  // Ensure there is a textarea element with an ID or class (e.g., #bullet-textarea) in your HTML
-  // const bulletTextarea = new BulletTextarea("#bullet-textarea");
   
   module.exports = BulletTextarea;
   
