@@ -1,11 +1,22 @@
 {
   "name": "bullet-textarea",
-  "version": "1.0.1",
-  "description": "The Bullet Textarea is user interface component designed to streamline the process of creating and organizing bullet-points lists. Each line in the textarea is automatically formatted as a bullet point.",
+  "version": "1.0.2",
+  "description": "The Bullet Textarea is a user interface component designed to streamline the process of creating and organizing bullet-point lists. Each line in the textarea is automatically formatted as a bullet point.",
   "main": "index.js",
   "scripts": {
-    "test": "npm test bullet-textarea"
+    "test": "jest"
   },
   "author": "Umesh Thapa",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/umeshthapa121/bullet-textarea.git"
+  },
+  "keywords": ["bullet", "textarea", "UI", "component", "bullets", "list", "organizer"],
+  "dependencies": {
+    "react": "^18.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
 }

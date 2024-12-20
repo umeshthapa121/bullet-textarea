@@ -1,4 +1,10 @@
 // index.js
+
+/**
+ * Bullet Textarea Component
+ * A simple utility for creating and managing bullet-pointed text inputs.
+ */
+
 class BulletTextarea {
     constructor(selector) {
       this.textarea = document.querySelector(selector);
@@ -6,35 +12,34 @@ class BulletTextarea {
         throw new Error("Textarea element not found");
       }
   
+      this.previousLength = 0;
       this.initialize();
     }
   
     initialize() {
-      this.textarea.addEventListener("keydown", (event) => this.handleKeydown(event));
+      this.textarea.addEventListener("input", (event) => this.handleInput(event));
     }
   
-    handleKeydown(event) {
-      const { key } = event;
+    handleInput(event) {
+      const bullet = "\u2022";
+      const newLength = event.target.value.length;
+      const characterCode = event.target.value.substr(-1).charCodeAt(0);
   
-      // Handle new line with bullet point
-      if (key === "Enter") {
-        event.preventDefault();
-  
-        const { selectionStart, selectionEnd, value } = this.textarea;
-        const bullet = "➤ ";
-  
-        // Insert bullet point at the new line
-        const beforeCursor = value.slice(0, selectionStart);
-        const afterCursor = value.slice(selectionEnd);
-        const newValue = `${beforeCursor}\n${bullet}${afterCursor}`;
-  
-        this.textarea.value = newValue;
-  
-        // Move cursor to the correct position
-        const cursorPosition = selectionStart + bullet.length + 1;
-        this.textarea.setSelectionRange(cursorPosition, cursorPosition);
+      if (newLength > this.previousLength) {
+        if (characterCode === 10) { // Enter key
+          event.target.value = `${event.target.value}${bullet} `;
+        } else if (newLength === 1) { // First character
+          event.target.value = `${bullet} ${event.target.value}`;
+        }
       }
+  
+      this.previousLength = newLength;
     }
   }
+  
+  // Example Usage
+  // Ensure there is a textarea element with an ID or class (e.g., #bullet-textarea) in your HTML
+  // const bulletTextarea = new BulletTextarea("#bullet-textarea");
+  
   module.exports = BulletTextarea;
   
