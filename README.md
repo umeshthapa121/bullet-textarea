@@ -19,7 +19,7 @@ npm install bullet-textarea
 Alternatively, you can clone this repository and include `index.js` in your project.
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/umeshthapa121/bullet-textarea
 ```
 
 ## Usage
