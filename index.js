@@ -26,7 +26,7 @@ class BulletTextarea {
         // Insert bullet point at the new line
         const beforeCursor = value.slice(0, selectionStart);
         const afterCursor = value.slice(selectionEnd);
-        const newValue = `${beforeCursor}\n >${afterCursor}`;
+        const newValue = `${beforeCursor}\n${bullet}${afterCursor}`;
   
         this.textarea.value = newValue;
   
