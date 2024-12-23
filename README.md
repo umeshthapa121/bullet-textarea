@@ -1,92 +1,138 @@
-# Bullet Textarea
+# Bullet Textarea  
 
-**Bullet Textarea** is a lightweight JavaScript utility for managing bullet-pointed text input in a textarea element. It automatically adds bullet points at the beginning of each new line or when the user starts typing.
+**Bullet Textarea** is a React component designed to simplify the creation and management of bullet-point lists. Each line in the `textarea` is automatically formatted as a bullet point, making it an ideal tool for organizing thoughts, creating lists, or managing structured content in your applications.  
 
-## Features
-- Automatically adds a bullet point (`\u2022`) at the start of the first line.
-- Inserts a bullet point on each new line when pressing Enter.
-- Simple integration with plain JavaScript, Node.js, or module-based projects.
-- Easily customizable bullet styles.
+![Bullet Textarea Demo](https://example.com/demo-image.png)
 
-## Installation
+---
 
-### Install via npm (if published):
-```bash
-npm install bullet-textarea
-```
+## Features  
 
-### Clone the Repository:
-Alternatively, you can clone this repository and include `index.js` in your project.
+- Automatically prepends bullets (`❖`) to each line.  
+- Easily create structured lists with intuitive keyboard shortcuts (e.g., `Enter` for a new bullet).  
+- Lightweight and customizable.  
+- Compatible with modern React versions.  
 
-```bash
-git clone https://github.com/umeshthapa121/bullet-textarea
-```
+---
 
-## Usage
+## Installation  
 
-### 1. Add a Textarea Element to Your HTML
-Include a `<textarea>` element in your HTML file:
+To add `bullet-textarea` to your project, run:  
 
-```html
-<textarea id="bullet-textarea" rows="10" cols="50" placeholder="Start typing..."></textarea>
-```
+```bash  
+npm install bullet-textarea  
+```  
 
-### 2. Import and Initialize the Component
+or  
 
-#### Using Node.js/CommonJS:
-```javascript
-const BulletTextarea = require('bullet-textarea');
+```bash  
+yarn add bullet-textarea  
+```  
 
-// Initialize the Bullet Textarea
-const bulletTextarea = new BulletTextarea('#bullet-textarea');
-```
+---
 
-#### Using ES Modules:
-```javascript
-import BulletTextarea from 'bullet-textarea';
+## Usage  
 
-// Initialize the Bullet Textarea
-const bulletTextarea = new BulletTextarea('#bullet-textarea');
-```
+Here’s a basic example to get started:  
 
-#### Directly in the Browser:
-Include the script in your HTML:
-```html
-<script src="./index.js"></script>
-<script>
-  const bulletTextarea = new BulletTextarea('#bullet-textarea');
-</script>
-```
+```jsx  
+import React from 'react';  
+import BulletTextarea from 'bullet-textarea';  
 
-### 3. Test the Functionality
-1. Open your webpage in a browser.
-2. Start typing in the textarea.
-3. Observe that:
-   - The first character will prepend a bullet point (`\u2022`).
-   - Pressing **Enter** creates a new line with a bullet point.
+const App = () => {  
+  const handleChange = (value) => {  
+    console.log('Updated Value:', value);  
+  };  
 
-## Customization
+  return (  
+    <div>  
+      <h1>Bullet Textarea Demo</h1>  
+      <BulletTextarea defaultValue="❖ First Item\n❖ Second Item" onChange={handleChange} />  
+    </div>  
+  );  
+};  
 
-### Change Bullet Point Symbol
-To use a different bullet style (e.g., `-` or `*`), modify the `bullet` variable in the `handleInput` method:
+export default App;  
+```  
 
-```javascript
-const bullet = '-'; // Use '-' instead of '\u2022'
-```
+### Props  
 
-### Example:
-```javascript
-handleInput(event) {
-  const bullet = '-'; // Custom bullet point
-  ...
-}
-```
+| Prop          | Type     | Default      | Description                                                 |  
+|---------------|----------|--------------|-------------------------------------------------------------|  
+| `defaultValue`| `string` | `❖ `         | Initial text in the textarea. Must start with bullets.      |  
+| `onChange`    | `func`   | `undefined`  | Callback function triggered whenever the text changes.       |  
 
-## License
-This project is licensed under the ISC License. See the LICENSE file for more details.
+---
 
-## Author
-**Umesh Thapa**
+## Customization  
 
-Feel free to reach out for support or feature requests!
+### Styling  
+You can customize the component’s appearance by overriding the `textarea` styles:  
 
+```jsx  
+<BulletTextarea  
+  defaultValue="❖ My Bullet Point"  
+  onChange={(value) => console.log(value)}  
+  style={{ width: '500px', height: '300px', fontFamily: 'Arial' }}  
+/>  
+```  
+
+### Default Bullet Style  
+The default bullet character is `❖`. You can modify the bullet logic in your code to use a different character, such as `-` or `•`.  
+
+---
+
+## Development  
+
+### Running Locally  
+
+Clone the repository:  
+```bash  
+git clone https://github.com/umeshthapa121/bullet-textarea.git  
+cd bullet-textarea  
+```  
+
+Install dependencies:  
+```bash  
+npm install  
+```  
+
+Run the development server:  
+```bash  
+npm run dev  
+```  
+
+Run tests:  
+```bash  
+npm run test  
+```  
+
+---
+
+## Contributing  
+
+Contributions are welcome! Please follow these steps:  
+1. Fork the repository.  
+2. Create a feature branch: `git checkout -b feature-name`.  
+3. Commit your changes: `git commit -m 'Add feature'`.  
+4. Push to your branch: `git push origin feature-name`.  
+5. Open a pull request.  
+
+---
+
+## License  
+
+This project is licensed under the [ISC License](LICENSE).  
+
+---
+
+## Support  
+
+If you encounter any issues, feel free to open a bug report in the [issues section](https://github.com/umeshthapa121/bullet-textarea/issues).  
+
+---
+
+### Keywords  
+React, bullet, textarea, list management, UI component, text editor  
+
+Let me know if you need further modifications or enhancements!

@@ -1,9 +1,10 @@
 {
   "name": "bullet-textarea",
-  "version": "1.0.13",
-  "description": "The Bullet Textarea is a user interface component designed to streamline the process of creating and organizing bullet-point lists. Each line in the textarea is automatically formatted as a bullet point.",
-  "main": "src/index.js",
+  "version": "1.0.15",
+  "description": "A React component that streamlines the creation and organization of bullet-point lists. Automatically formats each line as a bullet point.",
+  "main": "dist/index.js",
   "scripts": {
+    "build": "babel src --out-dir dist --copy-files",
     "test": "jest"
   },
   "author": "Umesh Thapa",
@@ -12,5 +13,40 @@
     "type": "git",
     "url": "https://github.com/umeshthapa121/bullet-textarea.git"
   },
-  "keywords": ["bullet", "textarea", "UI", "component", "bullets", "list", "organizer"]
+  "bugs": {
+    "url": "https://github.com/umeshthapa121/bullet-textarea/issues"
+  },
+  "homepage": "https://github.com/umeshthapa121/bullet-textarea#readme",
+  "keywords": [
+    "bullet",
+    "textarea",
+    "UI",
+    "component",
+    "react",
+    "list management",
+    "text editor",
+    "ewumesh"
+  ],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.8.1"
+  },
+  "type": "module",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "@babel/cli": "^7.26.4",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.26.3",
+    "jest": "^29.7.0"
+  }
 }
