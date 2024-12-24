@@ -1,6 +1,6 @@
 {
   "name": "bullet-textarea",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "A React component that streamlines the creation and organization of bullet-point lists. Automatically formats each line as a bullet point.",
   "main": "dist/index.js",
   "scripts": {
